@@ -36,13 +36,16 @@ export const TodoReducer = (state, action) => {
             }
             
         case 'TOGGLE_COMPLETED':
-            state.map(item => {
-                if (item.id === action.payload.id){
-                    return [...state, item.completed = !item.completed];
-                }
-                    return [...state];
-                
-            });
+            const index = state.findIndex(item => item.id === action.payload.id)
+            return [ 
+                ...state.slice(0,index),
+                {
+                    ...state[index],
+                    completed: !state.completed
+                },
+                ...state.slice(index+1),
+            ]
+
         case "REMOVE_COMPLETED":
             return state.filter(item => item.completed === false);
             
