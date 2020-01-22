@@ -10,15 +10,15 @@ const TodoForm = (props) => {
     };
 
     return (
-        <form className="form">
+        <div className="form">
             <input type="text" name="todo" onChange={handleChanges} value={newTodoText}/>
-            <abutton 
+            <button 
                 onClick={() => props.dispatch({ type: 'ADD_TODO', payload: newTodoText})}>Add Todo
-            </abutton>
-            <abutton 
+            </button>
+            <button 
                 onClick={() => props.dispatch({type:"REMOVE_COMPLETED"})}>Clear Completed Todos
-            </abutton>
-        </form>
+            </button>
+        </div>
     );
 }
 
