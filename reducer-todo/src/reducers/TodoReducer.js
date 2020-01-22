@@ -23,10 +23,13 @@ export const TodoReducer = (state, action) => {
                 }
             ]
         case 'TOGGLE_COMPLETED':
-            return {
-                ...state, 
-                completed: !state.completed
-            };
+            state.map(item => {
+                if (item.id === action.payload.id){
+                    return [...state, item.completed = !item.completed];
+                }else {
+                    return [...state];
+                }
+            })
         default: 
             return state;
     }
