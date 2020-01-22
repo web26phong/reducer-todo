@@ -12,8 +12,12 @@ const TodoForm = (props) => {
     return (
         <form className="form">
             <input type="text" name="todo" onChange={handleChanges} value={newTodoText}/>
-            <abutton onClick={() => props.dispatch({ type: 'ADD_TODO', payload: newTodoText})}>Add Todo</abutton>
-            <abutton>Clear Completed Todos</abutton>
+            <abutton 
+                onClick={() => props.dispatch({ type: 'ADD_TODO', payload: newTodoText})}>Add Todo
+            </abutton>
+            <abutton 
+                onClick={() => props.dispatch({type:"REMOVE_COMPLETED"})}>Clear Completed Todos
+            </abutton>
         </form>
     );
 }

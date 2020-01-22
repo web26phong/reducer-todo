@@ -5,6 +5,7 @@ const TodoList = (props) => {
     const [state, dispatch] = useReducer(TodoReducer, initialState);
     // console.log(state)
     console.log(props.state)
+
     return (
         <div>
             {props.state.map(item => (

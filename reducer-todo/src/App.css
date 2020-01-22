@@ -50,7 +50,7 @@ abutton {
 }
 
 abutton:hover {
-  background-color: #ffffff22;
+  background-color: rgb(226, 226, 226);
 }
 
 abutton:focus {
