@@ -41,7 +41,7 @@ export const TodoReducer = (state, action) => {
                 ...state.slice(0,index),
                 {
                     ...state[index],
-                    completed: !state.completed
+                    completed: !state[index].completed
                 },
                 ...state.slice(index+1),
             ]
